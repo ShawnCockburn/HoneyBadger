@@ -37,7 +37,7 @@ body {
 .titlebar {
   -webkit-user-select: none;
   -webkit-app-region: drag;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 28px;
 }

@@ -1,13 +1,37 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import {
+  CssBaseline,
+  MuiThemeProvider,
+  createMuiTheme,
+} from "@material-ui/core";
+import Home from "./Home";
 
-const App = (props) => {
+/*
+Setup global theming
+*/
+const theme = createMuiTheme({
+  palette: {
+    type: "light",
+  },
+});
+
+const Theming = ({ children, ...rest }) => {
   return (
-    <div>
-      <Typography variant="h3">
-      HoneyBadger
-      </Typography>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      {children}
+    </MuiThemeProvider>
+  );
+};
+
+/*
+App
+*/
+const App = ({ children, ...rest }) => {
+  return (
+    <Theming>
+      <Home />
+    </Theming>
   );
 };
 
