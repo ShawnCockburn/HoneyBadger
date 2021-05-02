@@ -1,7 +1,7 @@
 {
   "name": "HoneyBadger",
   "version": "1.0.0",
-  "description": "Batch file actions, (rename, image resize, zipping, send to ftp, you name it; this honey badger don't give a f....)",
+  "description": "Batch file actions, (rename, image resize, zipping, send to ftp, you name it)",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "ebuild": "npm run build && node_modules/.bin/build",
-    "test": "react-scripts test",
+    "test": "jest --verbose",
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\""
   },
@@ -53,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.14.0"
   }
 }
