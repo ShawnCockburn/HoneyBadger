@@ -2,7 +2,7 @@ class Action {
   #inputFilePaths;
   #outputDirectory;
   #onProgressUpdate = () => {};
-  #stop = false;
+  #stopAction = false;
 
   constructor(inputFilePaths, outputDirectory) {
     this.#inputFilePaths = inputFilePaths;
@@ -46,8 +46,10 @@ class Action {
   }
 
   stop() {
-    this.#stop = true;
+    this.#stopAction = true;
   }
+
+  getStopAction() {return this.#stopAction}
 }
 
 export default Action;

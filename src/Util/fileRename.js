@@ -29,14 +29,25 @@ class RenameFile extends Action {
   }
 
   action() {
-    super.getInputFilePaths().map((path, index, array) => {
-      renameFile(
-        path,
-        super.getOutputDirectory() + this.getNewFilename() + index
-      );
-      super.updateProgress(Action.calcWorkDone(index + 1, array.length));
-    });
-    super.action();
+    //TODO: make this cancelable
+    // super.getInputFilePaths().map((path, index, array) => {
+    //   renameFile(
+    //     path,
+    //     super.getOutputDirectory() + this.getNewFilename() + index
+    //   );
+    //   super.updateProgress(Action.calcWorkDone(index + 1, array.length));
+    // });
+
+    (async () => {
+      for (const [index, path] of super.getInputFilePaths().entries()) {
+        if (super.getStopAction()) break;
+        renameFile(
+          path,
+          super.getOutputDirectory() + this.getNewFilename() + index
+        );
+        super.updateProgress(Action.calcWorkDone(index + 1, array.length));
+      }
+    })();
   }
 }
 
