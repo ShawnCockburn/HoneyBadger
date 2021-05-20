@@ -18,6 +18,7 @@ class ImageResize extends Action {
     https://sharp.pixelplumbing.com/api-resize#resize
   */
   #imageResizeOptions;
+  
   constructor(inputFilePaths, outputDirectory, imageResizeOptions) {
     super(inputFilePaths, outputDirectory);
     this.#imageResizeOptions = imageResizeOptions;

@@ -1,11 +1,13 @@
-import { Box } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import React from "react";
-import Test from "./Test";
+
 
 const Home = ({ children, ...rest }) => {
-  return <Box>
-    <Test/>
-  </Box>;
+  return (
+    <Box>
+      <Typography>Home</Typography>
+    </Box>
+  );
 };
 
 export default Home;

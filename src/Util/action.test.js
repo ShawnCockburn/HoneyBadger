@@ -31,3 +31,9 @@ test("static calcWorkDone function works", () => {
   expect(Action.calcWorkDone(100, 100)).toBe(100);
   expect(Action.calcWorkDone(1, 100)).toBe(1);
 });
+
+test("Stop works", () => {
+  expect(testAction.getStopAction()).toBe(false);
+  testAction.stop();
+  expect(testAction.getStopAction()).toBe(true);
+});
