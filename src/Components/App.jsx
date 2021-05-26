@@ -1,7 +1,7 @@
 import { Box } from "@material-ui/core";
 import React, { useState } from "react";
 import SideBar from "./SideBar";
-import { HomeRounded, Settings as SettingsIcon } from "@material-ui/icons";
+import { HomeRounded, Settings as SettingsIcon, PlaylistAdd } from "@material-ui/icons";
 import {
   CssBaseline,
   MuiThemeProvider,
@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import Home from "./Home";
 import Settings from "./Settings";
+import Workflow from "./Workflow";
 
 /*
 Setup global theming
@@ -40,6 +41,12 @@ const sections = [
     icon: SettingsIcon,
     screen: Settings,
     uid: "settings",
+  },
+  {
+    title: "Workflow",
+    icon: PlaylistAdd,
+    screen: Workflow,
+    uid: "workflow",
   },
 ];
 
