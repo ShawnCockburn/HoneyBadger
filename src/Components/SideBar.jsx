@@ -1,5 +1,6 @@
 import { Box } from "@material-ui/core";
 import React, { useState } from "react";
+import { useTheme } from "@material-ui/core/styles";
 
 const SideBarItem = ({ title, icon, uid, selected, onClick }) => {
   const Icon = icon;
@@ -11,6 +12,7 @@ const SideBarItem = ({ title, icon, uid, selected, onClick }) => {
 };
 
 const SideBar = ({ sections = [], onSectionSelect, selectedUid, ...rest }) => {
+  const theme = useTheme();
   /*
 sections data structure
 [{ title: "Home", icon: (props) => <HomeRounded {...props} />, uid: "home" }];
@@ -19,7 +21,7 @@ sections data structure
   return (
     <Box
       display="flex"
-      bgcolor="gray"
+      bgcolor={theme.palette.background.paper}
       width="70px"
       height="100%"
       flexDirection="column"

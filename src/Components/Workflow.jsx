@@ -1,4 +1,4 @@
-import { Box, Fab } from "@material-ui/core";
+import { Box, Button, Fab } from "@material-ui/core";
 import { Add } from "@material-ui/icons";
 import React from "react";
 import ActionCard from "./ActionCard";
@@ -16,7 +16,11 @@ const Workflow = ({ children, ...rest }) => {
       width="100%"
       flexDirection="column"
     >
-    <ActionCard progress={80}/>
+      <ActionCard progress={0} disabled={true}>
+        <Button variant="contained" onClick={()=>console.log("test")}>test</Button>
+        <Button variant="contained">iuwfbwiuevbwieuvbwiub</Button>
+        <Button variant="contained">test</Button>
+      </ActionCard>
       <Fab color="primary" aria-label="add">
         <Add />
       </Fab>
